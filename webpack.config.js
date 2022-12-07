@@ -18,13 +18,11 @@ module.exports = {
 				test: /\.s[ac]ss$/i,
 				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
-			// {
-			// 	test: /\.(eot|svg|ttf|woff|woff2)$/,
-			// 	loader: 'file-loader',
-			// 	options: {
-			// 		name: 'src/fonts/[name].[ext]',
-			// 	},
-			// },
+			{
+				test: /\.(d.ts)$/,
+				include: [path.join(__dirname, 'src')],
+				loader: 'null-loader',
+			},
 		],
 	},
 	resolve: {

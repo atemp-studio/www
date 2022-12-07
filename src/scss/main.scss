@@ -104,7 +104,7 @@ body {
 
 #all-links {
 	display: none;
-	padding: 2em 1em 0em 1em;
+	padding: 1.25em 1em 0em 1em;
 
 	button {
 		font-family: $grimy;
@@ -125,7 +125,8 @@ body {
 
 		img {
 			position: absolute;
-			right: 1em;
+			padding-top: 0.05em;
+			right: 1.15em;
 			height: 0.85em;
 		}
 	}
@@ -157,6 +158,12 @@ body {
 			}
 
 			& > span {
+				position: relative;
+				top: -0.1em;
+				left: 0.1em;
+			}
+
+			& > span > span {
 				font-family: "TerminalGrotesque";
 				margin: 0px 1px;
 			}
