@@ -1,0 +1,11 @@
+/* Define local fonts */
+@mixin define_font($filepath_basename, $name, $weight: normal, $style: normal) {
+	@font-face {
+		src: url("../fonts/#{$filepath_basename}.woff2") format("woff2"),
+				 url("../fonts/#{$filepath_basename}.woff") format("woff"),
+				 url("../fonts/#{$filepath_basename}.otf") format("otf");
+		font-family: #{$name};
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}

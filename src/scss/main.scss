@@ -1,0 +1,180 @@
+@use "helpers";
+@use "windows98";
+
+/* Maison Neue */
+@include helpers.define_font("MaisonNeue-Book", "MaisonNeue");
+$sans: MaisonNeue, Helvetica, Arial, sans-serif;
+
+/* TT Contrast */
+@include helpers.define_font("TTContrast", "TTContrast");
+
+/* Tapeworm */
+@include helpers.define_font("Tapeworm", "Tapeworm");
+
+/* Fodor */
+@include helpers.define_font("Fodor Regular", "Fodor");
+
+/* Terminal Grotesque */
+@include helpers.define_font("terminal-grotesque", "TerminalGrotesque");
+$grimy: Fodor, TerminalGrotesque, "Courier New", Courier, monospace;
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: $sans; 
+}
+
+#gallery-promo {
+	display: block;
+
+	* {
+		margin: 0;
+		padding: 0;
+		border: none;
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	@include windows98.dragable;
+	@include windows98.promo-window;
+
+	header {
+		position: absolute;
+		bottom: 0px;
+		width: 100%; 
+		padding: 1em 8em 1em 2em;
+	}
+
+	p {
+		font-family: TTContrast;
+		font-size: 1.1em;
+		margin: 0.75em 0 0.75em 0;
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		bottom: 1px;
+		font-family: $sans;
+		font-size: 0.92em;
+		color: black;
+		text-decoration: none;
+	}
+
+	hr {
+		border-top: 1px solid black;
+	}
+
+	.sans {
+		position: relative;
+		display: inline-block;
+		bottom: 1px;
+		font-family: $sans;
+		font-size: 0.92em;
+	}
+
+	#overlay {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100vw;
+		height: 100vh;
+		display: none;
+		background-color: #fff;
+		z-index: 1000;
+		text-align: center;
+		line-height: calc(0.97 * 100vh);
+		font-family: "Tapeworm";
+		font-size: 4vw;
+	}
+
+	a[href="https://notion.atemp.studio"] {
+		padding: 3.75em 3.25em;
+		background-color: #fff ;
+		
+		& > span {
+			display: block;
+			font-family: windows98.$ms-sans;
+			font-size: 0.9em;
+		}
+	}
+}
+
+#all-links {
+	display: none;
+	padding: 2em 1em 0em 1em;
+
+	button {
+		font-family: $grimy;
+		color: black;
+		letter-spacing: 1px;
+		width: 100%;
+		padding: 10px 0px 10px 0.65em;
+		text-align: left;
+		font-size: 2em;
+		border: none;
+		border-radius: 2em;
+		background: linear-gradient(35deg, #ffffff, #fafafa);
+		box-shadow: 0.15em 0.15em 0.2em #ccc, -0.15em -0.15em 0.15em #eee;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		img {
+			position: absolute;
+			right: 1em;
+			height: 0.85em;
+		}
+	}
+
+	nav {
+		position: relative;
+		display: none;
+		margin-top: 0.5em;
+		z-index: 1;
+		background: #f8f8f8;
+		box-shadow: inset 0.15em 0.15em 0.2em #ccc, inset -0.15em -0.15em 0.15em #eee;
+		font-size: 2em;
+		border-radius: 1em;
+		padding: 0.35em 0.2em;
+		width: calc(100% - 0.4em);
+
+		a {
+			font-family: $grimy;
+			color: black;
+			text-decoration: none;
+			letter-spacing: 1px;
+			display: block;
+			border-radius: 2em;
+			padding: 0.25em 0em 0.25em 0.6em;
+
+			img {
+				height: 1em;
+				padding: 0.2em 0.1em 0em 0.1em;
+			}
+
+			& > span {
+				font-family: "TerminalGrotesque";
+				margin: 0px 1px;
+			}
+
+			&:hover {
+				background: linear-gradient(35deg, #ffffff, #fafafa);
+				box-shadow: 0.15em 0.15em 0.2em #ccc, -0.15em -0.15em 0.15em #eee;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	#all-links {
+		display: block;
+	}
+
+	#gallery-promo {
+		display: none;
+	}
+}

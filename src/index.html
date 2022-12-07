@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>A-TEMP®</title>
+		<link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+	</head>
+
+	<body>
+		<!-- Gallery Promo view (>1000px wide default) -->
+		<section id="gallery-promo">
+			<!-- Header (displayed at bottom of page) -->
+			<header>
+				<p>
+					<a href="/">A-TEMP® Studio</a> is the practice of
+					<a href="https://marx.sh">William W. Marx</a>working between art, design and research.
+				</p>
+				<hr/>
+				<p>
+					(DIGITAL) <a href="https://instagram.com/williamwmarx">@williamwmarx</a> —
+					<a href="mailto:team@atemp.studio">team@atemp.studio</a> |
+					(PHYSICAL) <span id="time" class="sans">00:00:00</span> <span class="sans">[New York, NY (U.S.A.)]</span>
+				</p>
+			</header>
+
+			<!-- Art Store window -->
+			<div id="dragable">
+				<div id="dragzone">
+					<div class="window">
+						<div class="title-bar">
+							<span>“Curated Vacancy” Art Store</span>
+							<aside>
+								<button aria-label="Minimize" onclick="showOverlay('BUY NOW CRY LATER')"/>
+								<button aria-label="Maximize" onclick="showOverlay('DO NOT MINIMIZE THE ROLE OF COMMERCE')"/>
+								<button aria-label="Close" onclick="showOverlay('NICE TRY BUCKO')"/>
+							</aside>
+						</div>
+						<a href="https://gallery.atemp.studio">
+							<picture>
+								<source srcset="images/curated_vacancy.avif" type="image/avif"/>
+								<source srcset="images/curated_vacancy.webp" type="image/webp"/>
+								<img src="images/curated_vacancy.jpg" alt="“Curated Vacancy” Art Store">
+							</picture>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- README -->
+			<a href="https://notion.atemp.studio">
+				<picture>
+					<source srcset="icons/directory.avif" type="image/avif"/>
+					<source srcset="icons/directory.webp" type="image/webp"/>
+					<img src="icons/directory.png" alt="README">
+				</picture>
+				<span>README</span>
+			</a>
+
+			<!-- Overlay to display if triggered -->
+			<div id="overlay"></div>
+		</section>
+
+		<!-- Mobile view (<1000px wide) -->
+		<section id="all-links">
+			<!-- Button to toggle list of links -->
+			<button onclick="toggleAllLinksMenu()">
+				A-TEMP® Studio
+				<picture>
+					<source srcset="icons/magnify.avif" type="image/avif"/>
+					<source srcset="icons/magnify.webp" type="image/webp"/>
+					<img src="icons/magnify.png" alt="Magnifying Glass">
+				</picture>
+			</button>
+
+			<!-- List of links -->
+			<nav id="menu">
+				<a href="https://gallery.atemp.studio">
+					<picture>
+						<source srcset="icons/wingedcash.avif" type="image/avif"/>
+						<source srcset="icons/wingedcash.webp" type="image/webp"/>
+						<img src="icons/wingedcash.png" alt="Money with Wings Emoji">
+					</picture>
+					<span>#</span>ART STORE<span>#</span>
+				</a>
+				<a href="https://notion.atemp.studio">
+					<picture>
+						<source srcset="icons/mirror.avif" type="image/avif"/>
+						<source srcset="icons/mirror.webp" type="image/webp"/>
+						<img src="icons/mirror.png" alt="Mirror Emoji">
+					</picture>
+					<span>#</span>hq<span>#</span>
+				</a>
+				<a href="https://instagram.com/williamwmarx">
+					<picture>
+						<source srcset="icons/candle.avif" type="image/avif"/>
+						<source srcset="icons/candle.webp" type="image/webp"/>
+						<img src="icons/candle.png" alt="Candle Emoji">
+					</picture>
+					<span>#</span>INSTAGRAM<span>#</span>
+				</a>
+				<a href="mailto:team@atemp.studio">
+					<picture>
+						<source srcset="icons/postbox.avif" type="image/avif"/>
+						<source srcset="icons/postbox.webp" type="image/webp"/>
+						<img src="icons/postbox.png" alt="Postbox Emoji">
+					</picture>
+					<span>#</span>AEROGRAM<span>#</span>
+				</a>
+			</nav>
+		</section>
+
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV9RWXQ"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	</body>
+</html>

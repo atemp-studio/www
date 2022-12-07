@@ -1,0 +1,110 @@
+@use "helpers";
+
+// Global vars
+$windows98-gradient: linear-gradient(90deg, #000080, #1084d0);
+$surface: #c0c0c0;
+$slight-shadow: 2px 4px 18px rgba(0, 0, 0, 0.2);
+$slight-shadow-hover: 3px 6px 24px rgba(0, 0, 0, 0.5);
+$raised-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+$sunken-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+
+/* Windows 98 MS Sans Serif */
+@include helpers.define_font("ms_sans_serif", "Pixelated MS Sans Serif");
+@include helpers.define_font("ms_sans_serif_bold", "Pixelated MS Sans Serif", bold);
+$ms-sans: "Pixelated MS Sans Serif", "Helvetica", "Arial", monospace;
+
+@mixin dragable {
+	#dragable {
+		position: absolute;
+		display: flex;
+		z-index: 9;
+		&>div {
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+		}
+	}
+}
+
+@mixin promo-window {
+	.window {
+		position: absolute;
+		font-family: $ms-sans;
+		font-weight: bold;
+		font-size: 11px;
+		box-shadow: $raised-shadow, $slight-shadow;
+		transition: box-shadow 0.2s;
+		background: $surface;
+		padding: 3px 3px 1px 3px;
+
+		&.drag {
+			box-shadow: $raised-shadow, $slight-shadow-hover;
+			.title-bar {
+				cursor: grabbing;
+			}
+		}
+
+		& > a {
+			cursor: pointer;
+			img {
+				width: 450px;
+			}
+		}
+
+		.title-bar {
+			cursor: grab;
+			background: $windows98-gradient;
+			padding: 3px 2px 3px 3px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			span {
+				font-weight: bold;
+				color: white;
+				letter-spacing: 0;
+				margin: 0px 24px 0px 2px;
+			}
+
+			aside {
+				display: flex;
+			}
+
+			button {
+				margin-left: 2px;
+				padding: 0;
+				display: block;
+				min-width: 16px;
+				min-height: 14px;
+				background: $surface;
+				box-shadow: $raised-shadow;
+
+				&:active {
+					box-shadow: $sunken-shadow;
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&[aria-label="Minimize"] {
+					background-image: url("../icons/minimize.svg");
+					background-repeat: no-repeat;
+					background-position: bottom 4px center;
+				}
+
+				&[aria-label="Maximize"] {
+					background-image: url("../icons/maximize.svg");
+					background-repeat: no-repeat;
+					background-position: top 2px center;
+				}
+
+				&[aria-label="Close"] {
+					background-image: url("../icons/close.svg");
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+			}
+		}
+	}
+}
